@@ -1,9 +1,10 @@
 {
-  "name": "Supabase MCP Proxy",
-  "description": "Proxy that authenticates Claude with Supabase REST API",
-  "endpoints": [
+  "mcpVersion": "1.0",
+  "name": "supabase-proxy",
+  "description": "Proxy for Supabase REST API via Netlify Function",
+  "servers": [
     {
-      "type": "mcp",
+      "type": "rest",
       "url": "https://reliable-squirrel-7282c7.netlify.app/.netlify/functions/proxy"
     }
   ]
