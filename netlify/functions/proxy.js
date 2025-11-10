@@ -1,6 +1,7 @@
 // netlify/functions/proxy.js
 exports.handler = async function(event) {
-  const target = "https://mcp.supabase.com/mcp?project_ref=opchdiaepihfxsihiuwv";
+const target = "https://opchdiaepihfxsihiuwv.supabase.co/rest/v1/";
+;
 
   try {
     const response = await fetch(target, {
@@ -24,3 +25,4 @@ exports.handler = async function(event) {
     };
   }
 };
+
