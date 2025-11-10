@@ -1,7 +1,6 @@
 // netlify/functions/proxy.js
 
 export async function handler(event) {
-  // The official MCP endpoint for your Supabase project
   const target = "https://mcp.supabase.com/mcp?project_ref=opchdiaepihfxsihiuwv";
 
   try {
@@ -9,7 +8,8 @@ export async function handler(event) {
       method: event.httpMethod,
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`
+        // This key must be your Supabase SERVICE ROLE KEY
+        Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
       },
       body: event.httpMethod !== "GET" ? event.body : undefined,
     });
